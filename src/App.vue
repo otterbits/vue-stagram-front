@@ -20,10 +20,16 @@
 </template>
 
 <script>
-import Container from './components/Container';
+import Container from "./components/Container";
+import posting from './assets/posting';
 
 export default {
   name: 'App',
+  data(){
+    return {
+      posting : posting,
+    }
+  },
   components: {
     Container: Container,
   }
