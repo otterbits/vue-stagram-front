@@ -1,12 +1,19 @@
 <template>
   <div>
-    컨테이너
+    <Post/>
+    <Post/>
+    <Post/>
   </div>
 </template>
 
 <script>
+import Post from "./Post.vue"
+
 export default {
-    name: 'Container'
+    name: 'Container',
+    components: {
+        Post: Post,
+    }
 
 }
 </script>
