@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <Post />
-    <Post />
-    <Post />
+  <div v-for="(v, i) in postdata" :key="i">
+    <Post :게시물="postdata[i]" />
   </div>
 </template>
 
@@ -13,6 +11,9 @@ export default {
     name: 'Container',
     components: {
         Post: Post,
+    },
+    props: {
+      postdata: Array,
     }
 
 }

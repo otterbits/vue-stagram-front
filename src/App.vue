@@ -9,7 +9,7 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container />
+  <Container :postdata="postdata" />
 
   <div class="footer">
     <ul class="footer-button-plus">
@@ -21,13 +21,13 @@
 
 <script>
 import Container from "./components/Container";
-import posting from './assets/posting';
+import postdata from './assets/postdata.js';
 
 export default {
   name: 'App',
   data(){
     return {
-      posting : posting,
+      postdata : postdata,
     }
   },
   components: {
