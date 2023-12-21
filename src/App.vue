@@ -20,15 +20,18 @@
 </template>
 
 <script>
+import Container from './components/Container';
 
 export default {
   name: 'App',
   components: {
+    Container: Container,
   }
 }
 </script>
 
 <style>
+
 body {
   margin: 0;
 }
