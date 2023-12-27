@@ -9,7 +9,7 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container :postdata="postdata" />
+  <Container :postdata="postdata" :step="step" />
   <button @click="more">더보기</button>
 
   <div class="footer">
@@ -30,7 +30,8 @@ export default {
   data(){
     return {
       postdata : postdata,
-      morecount : 0
+      morecount : 0,
+      step : 2,
     }
   },
   components: {
