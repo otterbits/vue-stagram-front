@@ -9,12 +9,12 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container :postdata="postdata" :step="step" />
+  <Container :postdata="postdata" :step="step" :image="image" />
   <button @click="more">더보기</button>
 
   <div class="footer">
     <ul class="footer-button-plus">
-      <input type="file" id="file" class="inputfile" />
+      <input @change="upload" type="file" id="file" class="inputfile" />
       <label for="file" class="input-plus">+</label>
     </ul>
  </div>
@@ -31,7 +31,8 @@ export default {
     return {
       postdata : postdata,
       morecount : 0,
-      step : 2,
+      step : 0,
+      image : '',
     }
   },
   components: {
@@ -44,6 +45,11 @@ export default {
         this.postdata.push(결과.data);
         this.morecount ++
       })
+    },
+    upload(e){
+      let 파일 = e.target.files;
+      this.image = URL.createObjectURL(파일[0]);
+      this.step++
     }
   }
 }
