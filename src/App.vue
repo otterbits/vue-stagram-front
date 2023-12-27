@@ -4,12 +4,13 @@
       <li>Cancel</li>
     </ul>
     <ul class="header-button-right">
-      <li @click="step++">Next</li>
+      <li v-if="step == 1" @click="step++">Next</li>
+      <li v-if="step == 2" @click="publish">발행</li>
     </ul>
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container :postdata="postdata" :step="step" :image="image" />
+  <Container @write ="addPost = $event" :postdata="postdata" :step="step" :image="image" />
   <button @click="more">더보기</button>
 
   <div class="footer">
@@ -33,6 +34,7 @@ export default {
       morecount : 0,
       step : 0,
       image : '',
+      작성한글 : '',
     }
   },
   components: {
@@ -50,8 +52,22 @@ export default {
       let 파일 = e.target.files;
       this.image = URL.createObjectURL(파일[0]);
       this.step++
-    }
-  }
+    },
+    publish(){
+      var 내게시물 = {
+      name: "Kim Hyun",
+      userImage: '',
+      postImage: this.image,
+      likes: 36,
+      date: "May 15",
+      liked: false,
+      content: this.addPost,
+      filter: "perpetua"
+    };
+      this.postdata.unshift(내게시물);
+      this.step = 0;
+    },
+  },
 }
 </script>
 
