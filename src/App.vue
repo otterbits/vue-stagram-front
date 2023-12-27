@@ -55,8 +55,8 @@ export default {
     },
     publish(){
       var 내게시물 = {
-      name: "Kim Hyun",
-      userImage: '',
+      name: "otterBit",
+      userImage: "https://picsum.photos/100?random=3",
       postImage: this.image,
       likes: 36,
       date: "May 15",
