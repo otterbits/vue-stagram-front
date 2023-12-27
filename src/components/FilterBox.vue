@@ -1,5 +1,5 @@
 <template>
-  <div class="filter-item" :style="`background-image:url(${image})`"></div> 
+  <div v-for="i in filter" :key="i" :class="`${i} filter-item`" :style="`background-image:url(${image})`"></div> 
 </template>
 
 <script>
@@ -8,6 +8,7 @@ export default {
 
 props: {
     image: String,
+    filter: Array,
 
 }
 }
