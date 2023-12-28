@@ -7,7 +7,7 @@
   <div v-if="step == 1">
   <div class="upload-image" :style="`background-image:url(${image})`"></div>
   <div class="filters">
-    <FilterBox v-for="i in filter" :key="i" :filter="filter" :image="image"></FilterBox>
+    <FilterBox v-for="filter in filters" :key="filter" :filter="filter" :image="image"></FilterBox>
   </div>
   </div>
 
@@ -37,7 +37,7 @@ export default {
     },
     data() {
       return {
-      filter : [ "aden", "_1977", "brannan", "brooklyn", "clarendon", "earlybird", "gingham", "hudson", 
+      filters : [ "aden", "_1977", "brannan", "brooklyn", "clarendon", "earlybird", "gingham", "hudson", 
       "inkwell", "kelvin", "lark", "lofi", "maven", "mayfair", "moon", "nashville", "perpetua", 
       "reyes", "rise", "slumber", "stinson", "toaster", "valencia", "walden", "willow", "xpro2"],
       }
