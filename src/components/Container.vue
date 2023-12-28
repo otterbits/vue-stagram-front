@@ -2,12 +2,15 @@
   <div>
     <div v-if="step == 0">
     <Post :게시물="postdata[i]" v-for="(v, i) in postdata" :key="i"/>
+    </div>
   </div>
 
   <div v-if="step == 1">
   <div class="upload-image" :style="`background-image:url(${image})`"></div>
   <div class="filters">
-    <FilterBox v-for="filter in filters" :key="filter" :filter="filter" :image="image"></FilterBox>
+    <FilterBox v-for="filter in filters" :key="filter" :filter="filter" :image="image">
+    {{ filter }}
+    </FilterBox>
   </div>
   </div>
 
@@ -17,7 +20,6 @@
     <textarea @input="$emit('write', $event.target.value)" class="write-box">write!</textarea>
   </div>
   </div>
-</div>
 </template>
 
 <script>
