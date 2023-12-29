@@ -6,10 +6,10 @@
 
 <script>
 export default {
-    name: 'filterbox',
+    name: 'filterBox',
     methods: {
       applyFilter(){
-        this.emitter.emit('박스클릭함', this.filter)
+        this.emitter.emit('selectBox', this.filter)
       }
     },
 
