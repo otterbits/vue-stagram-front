@@ -10,8 +10,10 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
+
   <Container @write ="addPost = $event" :postdata="postdata" :step="step" :image="image" />
   <button @click="more">더보기</button>
+  <button @click="$store.dispatch('getData')">더보기</button>
 
   <div class="footer">
     <ul class="footer-button-plus">
