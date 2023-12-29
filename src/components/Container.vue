@@ -20,17 +20,23 @@
     <textarea @input="$emit('write', $event.target.value)" class="write-box">write!</textarea>
   </div>
   </div>
+
+  <div v-if="step == 3">
+    <MyPage/>
+  </div>
 </template>
 
 <script>
 import Post from "./Post.vue"
 import FilterBox from "./FilterBox.vue"
+import MyPage from "./MyPage.vue"
 
 export default {
     name: 'Container',
     components: {
         Post: Post,
         FilterBox: FilterBox,
+        MyPage: MyPage,
     },
     mounted(){
       this.emitter.on('selectBox', (a)=>{

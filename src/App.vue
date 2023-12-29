@@ -34,7 +34,7 @@ export default {
     return {
       postdata : postdata,
       morecount : 0,
-      step : 0,
+      step : 3,
       image : '',
       작성한글 : '',
       selectedFilter : '',
