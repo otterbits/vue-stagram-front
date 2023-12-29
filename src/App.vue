@@ -35,7 +35,13 @@ export default {
       step : 0,
       image : '',
       작성한글 : '',
+      selectedFilter : '',
     }
+  },
+  mounted(){
+      this.emitter.on('selectBox', (a)=>{
+        this.selectedFilter = a
+      });
   },
   components: {
     Container: Container,
@@ -62,7 +68,7 @@ export default {
       date: "May 15",
       liked: false,
       content: this.addPost,
-      filter: "perpetua"
+      filter: this.selectedFilter,
     };
       this.postdata.unshift(내게시물);
       this.step = 0;
